@@ -20,4 +20,9 @@ export class ReservationsController {
   insertReservations(@Body() reservationsCreateDto: ReservationsCreateDto) {
     return this.reservationsService.insertReservations(reservationsCreateDto);
   }
+
+  @Get('/report')
+  sendReport(@Query() bookingAvailabilityDto: ReservationsAvailabilityDto) {
+    return this.reservationsService.sendReport(bookingAvailabilityDto);
+  }
 }
